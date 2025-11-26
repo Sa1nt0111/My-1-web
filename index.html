@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-color: #f4f4f9; /* 背景颜色稍微变一下 */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,37 +16,75 @@
         }
         .card {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 400px;
-            width: 90%;
+            width: 320px; /* 卡片宽度 */
+            transition: transform 0.3s;
         }
-        h1 { color: #333; margin-bottom: 10px; }
-        p { color: #666; line-height: 1.6; }
+        .card:hover {
+            transform: translateY(-5px); /* 鼠标放上去微微上浮 */
+        }
+        
+        /* 头像样式 */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* 让图片变圆 */
+            object-fit: cover; /* 防止图片变形 */
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+        
+        h1 { 
+            font-size: 24px; 
+            color: #333; 
+            margin: 10px 0 5px; 
+        }
+        
+        .email {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* 按钮样式 */
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
+            display: block; /* 独占一行 */
+            width: 80%;
+            margin: 10px auto;
+            padding: 12px 0;
+            background-color: #333; /* 黑色按钮，显得高级 */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
+            font-weight: bold;
             transition: background 0.3s;
         }
-        .btn:hover { background-color: #0056b3; }
+        .btn:hover { background-color: #555; }
+        
+        /* "更多"按钮可以是另一种颜色 */
+        .btn-more {
+            background-color: #007bff; /* 蓝色 */
+        }
+        .btn-more:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>👋 你好，朋友！</h1>
-        <p>欢迎来到我的个人网页。</p>
-        <p>这是我发布的第一个全球都能访问的页面。</p>
-        <a href="mailto:你的邮箱@example.com" class="btn">联系我</a>
+        <img src="avatar.jpg" alt="我的头像" class="avatar">
+        
+        <h1>你的名字</h1>
+        
+        <div class="email">yourname@example.com</div>
+
+        <a href="mailto:yourname@example.com" class="btn">发邮件给我</a>
+        
+        <a href="more.html" class="btn btn-more">进入更多 ></a>
     </div>
 
 </body>
-
 </html>
